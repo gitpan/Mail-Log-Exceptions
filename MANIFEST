@@ -1,0 +1,9 @@
+MANIFEST
+README
+LICENSE
+Todo
+Build.PL
+Makefile.PL
+lib/Mail/Log/Exceptions.pm
+t/001_load.t
+META.yml
