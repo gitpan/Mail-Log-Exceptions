@@ -2,24 +2,37 @@
 
 package Mail::Log::Exceptions;
 
+use strict;
 use warnings;
-use Exception::Class ( 	Mail::Log::Exceptions
+#use vars qw($VERSION);
+#$VERSION = '1.00001';
+use Exception::Class ( 	'Mail::Log::Exceptions'
 						=> { description => 'A generic Mail::Log::Exception.'}
 						,
 						
-						Mail::Log::Exceptions::Unimplemented
+						'Mail::Log::Exceptions::InvalidParameter'
+						=> { description => 'A parameter that was passed to a method is invalid.'
+								, isa => 'Mail::Log::Exceptions'
+							},
+						
+						'Mail::Log::Exceptions::Unimplemented'
 						=> { description => 'Stuff that should be implemented by subclasses.'
 								, isa => 'Mail::Log::Exceptions'
 							},
 						
-						Mail::Log::Exceptions::LogFile
+						'Mail::Log::Exceptions::LogFile'
 						=> { description => 'An error with the logfile.'
 								, isa => 'Mail::Log::Exceptions'
 							},
 						
-						Mail::Log::Exceptions::Message
+						'Mail::Log::Exceptions::Message'
 						=> { description => 'An error with the message info.'
 								, isa => 'Mail::Log::Exceptions'
+							},
+						
+						'Mail::Log::Exceptions::Message::IncompleteLog'
+						=> { description => 'Message was not fully in this log.'
+								, isa => 'Mail::Log::Exceptions::Message'
 							},
 						);
 
@@ -51,6 +64,11 @@ Current exceptions in this module:
 
 The root level Exception class.  Generic: Avoid using.
 
+=item Mail::Log::Exceptions::InvalidParameter
+
+Errors due to passing the data types, not passing required data, or other
+mistakes in calling method.
+
 =item Mail::Log::Exceptions::Unimplemented
 
 Exception to be thrown when a called method has not been implimented.  Typically
@@ -64,6 +82,11 @@ Errors having to do with the logfile itself: Errors opening, reading, etc.
 
 Errors having to do with message information: Something is unreadable, or
 missing, or in bad format, etc.
+
+=item Mail::Log::Exceptions::Message::IncompleteLog
+
+Errors due to there being a logfile that is incomplete, or a message that is not
+entirely within this logfile.
 
 =back
 
@@ -88,6 +111,8 @@ DStaal@usa.net
 L<Exception::Class>
 
 =head1 HISTORY
+
+Nov 22, 2008 - Added 
 
 Oct 9, 2008 - Inital version.
 

@@ -1,7 +1,10 @@
-# -*- perl -*-
+#!/usr/bin/perl
 
 # t/001_load.t - check module loading and create testing directory
 
+use strict;
+use warnings;
+use diagnostics;
 use Test::More tests => 9;
 
 BEGIN { use_ok( 'Mail::Log::Exceptions' ); }

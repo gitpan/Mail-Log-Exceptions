@@ -16,6 +16,10 @@ DESCRIPTION
     Mail::Log::Exceptions
         The root level Exception class. Generic: Avoid using.
 
+    Mail::Log::Exceptions::InvalidParameter
+        Errors due to passing the data types, not passing required data, or
+        other mistakes in calling method.
+
     Mail::Log::Exceptions::Unimplemented
         Exception to be thrown when a called method has not been
         implimented. Typically used by base classes when defining a method
@@ -28,6 +32,10 @@ DESCRIPTION
     Mail::Log::Exceptions::Message
         Errors having to do with message information: Something is
         unreadable, or missing, or in bad format, etc.
+
+    Mail::Log::Exceptions::Message::IncompleteLog
+        Errors due to there being a logfile that is incomplete, or a message
+        that is not entirely within this logfile.
 
     Classes in the module tree may define sub-classes of the above
     exceptions.
@@ -47,6 +55,8 @@ SEE ALSO
     Exception::Class
 
 HISTORY
+    Nov 22, 2008 - Added
+
     Oct 9, 2008 - Inital version.
 
 COPYRIGHT and LICENSE
