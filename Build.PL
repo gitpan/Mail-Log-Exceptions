@@ -3,7 +3,7 @@ use Module::Build;
 
 Module::Build->new
     ( module_name     => 'Mail::Log::Exceptions',
-      dist_version    => '1.0100',
+#      dist_version    => '1.0100',
       license         => 'perl',
       dist_author     => 'Daniel Staal - <DStaal@usa.net>',
       dist_abstract   => 'Exceptions for the Mail::Log::* modules.',

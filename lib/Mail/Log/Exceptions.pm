@@ -4,8 +4,8 @@ package Mail::Log::Exceptions;
 
 use strict;
 use warnings;
-#use vars qw($VERSION);
-#$VERSION = '1.00001';
+use vars qw($VERSION);
+$VERSION = '1.0200';
 use Exception::Class ( 	'Mail::Log::Exceptions'
 						=> { description => 'A generic Mail::Log::Exception.'}
 						,
